@@ -9,16 +9,16 @@ import java.util.Random;
  * 
  *  Assignment:     A1.5 Q1
  * 
- *  Description:    Place a short description of your program here
+ *  Description:    generate 1000 numbers 1-50 digits
  * 
  *************************************************************/
 
-public class Assignment1point5 {
+public class Assignment1point5Q1 {
 
     public static void main(String[] args) throws IOException{
     // ***** constants *******
     
-    final int MAX = 1000;
+        final int MAX = 1000;
     // ***** variables *****
         
         String banner = "";             // output banner
