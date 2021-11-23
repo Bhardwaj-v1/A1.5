@@ -69,7 +69,7 @@ public class Assignment1point5Q1 {
         randomInt = (rnd.nextInt(50) +1); //generates random numbers
         //printing random numbers
         System.out.println(randomInt);
-        fout.print(randomInt);
+        fout.println(randomInt);
     
     }
     
