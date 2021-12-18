@@ -42,7 +42,7 @@ public class Assignment1point5Q1 {
         // file io buffers for reading and writing to text files
         
         //BufferedReader fin = new BufferedReader(new FileReader("filename.txt"));
-        PrintWriter fout = new PrintWriter(new BufferedWriter(new FileWriter("outfle.txt")));
+        PrintWriter fout = new PrintWriter(new BufferedWriter(new FileWriter("numbers.txt")));
         
     
     // ***** print banners *****
@@ -54,7 +54,7 @@ public class Assignment1point5Q1 {
         banner += "*****************************" + nl + nl;
         
         System.out.println(banner);
-        fout.print(banner);
+        //fout.print(banner);
     
     // ***** Get Input *****
     
@@ -79,7 +79,7 @@ public class Assignment1point5Q1 {
     
         System.out.println();
         System.out.println("end of processing");
-        fout.println("End of Processing");
+        //fout.println("End of Processing");
         
     // **** close io buffers *****
     

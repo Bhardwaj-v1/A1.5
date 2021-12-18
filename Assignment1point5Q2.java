@@ -1,4 +1,4 @@
-import java.util.Scanner;
+;import java.util.Scanner;
 import javax.swing.*;
 import java.io.*;
 import java.text.NumberFormat;
@@ -19,7 +19,8 @@ public class Assignment1point5Q2 {
     // ***** constants *******
     
         final int MAX = 1000;
-        final int NUMBERMAX = 50;
+        final int NUMBERMAX = 50;       
+        
     // ***** variables *****
         
         String banner = "";             // output banner
@@ -31,6 +32,9 @@ public class Assignment1point5Q2 {
         String delim = "[ ]+";          // delimiter for splitting input records
         String[] tokens = null;         // used to split input records
         
+        BufferedReader fin = null;       // input bufferreader
+        
+        int count = 0;                   // increment counter
         int randomInt = 0;
         // a new line character that works on every computer system
         String nl = System.lineSeparator();
@@ -38,6 +42,7 @@ public class Assignment1point5Q2 {
         //Variables 
         int[] List = new int[MAX];
         int[] FrequencyArray = new int[NUMBERMAX];
+        
     
     // ***** objects *****
         Random rnd = new Random();          // random number generator
@@ -45,9 +50,16 @@ public class Assignment1point5Q2 {
         //NumberFormat currency = NumberFormat.getCurrencyInstance();
         
         // file io buffers for reading and writing to text files
+           try{
+           fin = new BufferedReader(new FileReader("numbers.txt"));
+        }// end try 
+        catch(FileNotFoundException e){
+           System.out.println("File not found"); 
+          fin = null; 
+        }// end catch
         
         //BufferedReader fin = new BufferedReader(new FileReader("filename.txt"));
-        PrintWriter fout = new PrintWriter(new BufferedWriter(new FileWriter("outfile.txt")));
+        //PrintWriter fout = new PrintWriter(new BufferedWriter(new FileWriter("outfile.txt")));
         
     
     // ***** print banners *****
@@ -59,7 +71,7 @@ public class Assignment1point5Q2 {
         banner += "*****************************" + nl + nl;
         
         System.out.println(banner);
-        fout.print(banner);
+        //fout.print(banner);
     
     // ***** Get Input *****
     
@@ -68,28 +80,55 @@ public class Assignment1point5Q2 {
         // echo input back to console window
     
     // ***** Main Processing *****
+    //part 1
+    // for(int i = 0; i < MAX; i++){
     
-    for(int i = 0; i < MAX; i++){
+        // randomInt = (rnd.nextInt(50) +1); //generates random numbers
+        // //printing random numbers
+        // System.out.println(randomInt);
+        // fout.println(randomInt);
     
-        randomInt = (rnd.nextInt(50) +1); //generates random numbers
-        //printing random numbers
-        System.out.println(randomInt);
-        fout.println(randomInt);
+    // }
     
-    }
+    //test to see if my strin is working
+    // strin = fin.readLine();
+    // while(strin != null){
+    // System.out.println(strin);
+    // }
     
+    
+    for(strin = fin.readLine();strin != null;strin = fin.readLine()) {
+            
+            //parsing strin into int to list
+            List[count] = Integer.parseInt(strin);
+
+            //Incrementing counter
+            count++;
+        }
+    
+    //finding the frequenecy 
+    
+    for(int i = 0; i < count; i++){
+            FrequencyArray[List[i]-1]++;
+        }//end of for loop
+    //printing the array
+    for(int i = 0; i < NUMBERMAX; i++){
+
+            System.out.println(i+1+ "=="+FrequencyArray[i]);
+
+        }//end of for loop
     // ***** Print Formatted Output *****
     
     // ***** Closing Message *****
     
         System.out.println();
         System.out.println("end of processing");
-        fout.println("End of Processing");
+        //fout.println("End of Processing");
         
     // **** close io buffers *****
     
         //fin.close();
-        fout.close();
+        //fout.close();
     } // end main 
     
 } // end FormatTemplate
