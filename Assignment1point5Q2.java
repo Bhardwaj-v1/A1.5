@@ -19,7 +19,16 @@ public class Assignment1point5Q2 {
     // ***** constants *******
     
         final int MAX = 1000;
-        final int NUMBERMAX = 50;       
+        final int NUMBERMAX = 50;    
+        
+        
+        // constants for ranges
+        final int TEN = 11;
+        final int TWENTY = 21;
+        final int THIRTY = 31;
+        final int FOURTY = 41;
+        final int FIFTY = 51;
+        
         
     // ***** variables *****
         
@@ -114,10 +123,43 @@ public class Assignment1point5Q2 {
     //printing the array
     for(int i = 0; i < NUMBERMAX; i++){
 
-            System.out.println(i+1+ "=="+FrequencyArray[i]);
+            System.out.println(i+1+ " = "+FrequencyArray[i]);
 
         }//end of for loop
+        // Allow the user to see the frequency of any number
+    for(int i = 0; i < NUMBERMAX; i++){
+        if(i==8){
+        System.out.println("Number = " + i);
+        System.out.print("Frequency = " + FrequencyArray[i]);
+       }
+    }//end of for
+    
+    // Allow the user to see the frequencies of a range of numbers
+    for(int i = 1;i < NUMBERMAX; i++){
+        if(i < TEN){
+            System.out.println(nl+ "1-10 Range = "+ FrequencyArray[i]);
+        }
+        if(i < TWENTY){
+            System.out.println("11-20 Range = "+ FrequencyArray[i]);
+        }
+        if(i < THIRTY){
+            System.out.println("21-30 Range = "+ FrequencyArray[i]);
+        }
+        if(i < FOURTY){
+            System.out.println("31-40 Range = "+ FrequencyArray[i]);
+        }
+        else{
+            System.out.println("41-50 Range = "+ FrequencyArray[i]);
+        }
+    }
+        
     // ***** Print Formatted Output *****
+    
+    
+   
+    
+    
+    
     
     // ***** Closing Message *****
     
